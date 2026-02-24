@@ -10,4 +10,4 @@ export class ExceptionController {
    getHello(@Param('id',ParseIntPipe)id:number){
       return {message:`Your Id is ${id}`}
    }
-}
+} 
