@@ -2,7 +2,7 @@
 import { Injectable,OnModuleInit,OnApplicationShutdown } from '@nestjs/common';
 
 @Injectable()
-export class DatabaseService {
+export class DatabaseService implements OnModuleInit, OnApplicationShutdown {
     private isConnected=false;
 
     onModuleInit(){
