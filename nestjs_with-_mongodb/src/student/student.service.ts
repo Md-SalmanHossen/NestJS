@@ -10,10 +10,17 @@ export class StudentService {
       @InjectModel(Student.name) private studentModel:Model<StudentDocument>
    ){}
 
-   async createStudent(data: Partial<Student>):
-   Promise<Student>{
+   async createStudent(data: Partial<Student>):Promise<Student>{
       const newStudent=new this.studentModel(data);
       return newStudent.save();
+   }
+
+   async getAllStudent():Promise<Student[]>{
+      return this.studentModel.find().exec();
+   }
+   
+   async getStudentById(id:string):Promise<Student |null>{
+      return this.studentModel.findById(id).exec();
    }
    
 }
