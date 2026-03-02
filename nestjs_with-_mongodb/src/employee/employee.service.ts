@@ -30,8 +30,7 @@ export class EmployeeService {
    }
 
    async findAll():Promise<Employee[]>{
-      return this.employeeModel.find().populate('Profile').exec(); 
+      return this.employeeModel.find().populate('profile').exec(); 
    }
-
 
 }
