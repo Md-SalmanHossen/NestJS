@@ -43,5 +43,4 @@ export class StudentController {
       return this.studentService.deleteStudent(id);
    }
    
-   
 }
