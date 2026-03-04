@@ -37,6 +37,10 @@ export class UsersService {
     return this.userModel.findById(id).select('-password');
   }
 
+  async update(id:string, dto:Partial<CreateUserDto>){
+    return this.userModel.findByIdAndUpdate(id,dto,{new:true})
+  }
+
   async remove(id: string) {
     return this.userModel.findByIdAndDelete(id);
   }
